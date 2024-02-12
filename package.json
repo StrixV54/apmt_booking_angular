@@ -1,6 +1,6 @@
 {
-  "name": "booking-app",
-  "version": "0.0.0",
+  "name": "booking-app-shrikant",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
