@@ -14,6 +14,7 @@ import { HealthProfessionalI } from '../../service/master/master.service.modal';
 export class HomeComponent implements OnInit {
   healthProfessional!: HealthProfessionalI[];
   filterList!: HealthProfessionalI[];
+  // Have 'None' as default selected
   specialityList: string[] = ['None'];
 
   constructor(
@@ -31,10 +32,12 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  // Move to booking page 
   onbookTime(workId: string, time: string) {
     this.router.navigate(['/booking'], { queryParams: { workId, time } });
   }
 
+  // Filter the list by choosen speciality
   filterBySpeciality(event: Event) {
     const element = event.target as HTMLSelectElement;
     if (element.value === 'None') this.filterList = this.healthProfessional;

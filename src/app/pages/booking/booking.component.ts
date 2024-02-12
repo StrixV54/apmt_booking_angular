@@ -37,23 +37,21 @@ export class BookingComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // Gets specific info from query params
     this.route.queryParamMap.subscribe((params) => {
       this.time = params.get('time')!;
       this.workId = params.get('workId')!;
     });
-    // this.workId = this.route.snapshot.queryParamMap.get('workId')!;
-    // this.time = this.route.snapshot.queryParamMap.get('time')!;
     this.masterService.getRecordById(this.workId).subscribe((data) => {
       this.healthProfessional = data;
     });
   }
 
   onSubmit() {
-    console.log(this.bookingForm.valid);
+    // Checks from validity and acts accordingly
     if (!this.bookingForm.valid) {
       this.bookingForm?.markAllAsTouched();
     } else {
-      console.log('first');
       this.masterService.bookAvailableTime(this.workId, this.time);
       this.router.navigateByUrl('/home');
     }

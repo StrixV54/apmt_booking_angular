@@ -12,20 +12,24 @@ export class MasterService {
 
   constructor() {}
 
+  // Get all record
   getAllRecords(): Observable<HealthProfessionalI[]> {
     return of(this.mockData);
   }
 
+  // Gets a specific health-professional record using id
   getRecordById(workId: string): Observable<HealthProfessionalI> {
     return of(this.mockData.filter((item) => item.workId === workId)[0]);
   }
 
+  // Creates a list of speciality from mockdata
   getSpecialityList(): Observable<string[]> {
     const data = new Set();
     this.mockData.forEach((item) => data.add(item.speciality));
     return of([...data] as string[]);
   }
 
+  //Book timeslot
   bookAvailableTime(workId: string, time: string): Observable<string> {
     this.mockData = this.mockData.map((person: HealthProfessionalI) => {
       if (person.workId === workId) {
@@ -40,7 +44,6 @@ export class MasterService {
       }
       return person;
     });
-    // console.log(this.mockData);
     return of('Updated Availability');
   }
 }
