@@ -36,7 +36,7 @@ describe('BookingComponent', () => {
 
     // expect(formAlert).toBeTruthy();
     // expect(formAlert.nativeElement.textContent).toBe(
-    //   'Please fill all fields correctly',
+    //   'Please fill all the fields correctly',
     // );
   });
 
