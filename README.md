@@ -1,8 +1,28 @@
-# BookingApp
+# Appointment Booking App
+
+This app has functionality allowing users to book an appointment with a healthcare professional. This includes selecting a professional, choosing an available timeslot, and submitting the booking.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
 
-## Development server
+##### Live Link : https://apmt-booking-angular.vercel.app/
+
+##### Project Walkthrough Link : https://drive.google.com/file/d/1ITm0sJ9DOt61TV4_3BuZNJD2mxPDw_7w/view?usp=sharing
+
+## Development server (run locally)
+
+1. Install Node Packages (Make sure to be inside current directory : apmt_booking_angular/)
+
+```
+npm install
+```
+
+2. Run Dev Server
+
+```
+ng serve
+-- OR --
+npm start
+```
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
