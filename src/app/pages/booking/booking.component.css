@@ -1,0 +1,126 @@
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #d7d7d7;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  border: solid 1px #a9a9a9;
+  background-color: #eaeaea;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px #44444424;
+  gap: 10px;
+  width: 100%;
+  max-width: 650px;
+  margin: 10px;
+}
+
+.container #d-title {
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.container #d-name {
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.container #d-profession {
+  opacity: 0.6;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.container #d-speciality {
+  font-size: 18px;
+}
+
+.container #d-address {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.container #d-time {
+  font-size: 20px;
+}
+
+.btn-box {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.btn-box button {
+  font-weight: 300;
+  font-size: 16px;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-box button:nth-child(1) {
+  background-color: #118730;
+}
+
+.btn-box button:nth-child(1):hover {
+  background-color: #14ad3d;
+}
+
+.btn-box button:nth-child(2) {
+  background-color: #1b469c;
+}
+
+.btn-box button:nth-child(2):hover {
+  background-color: #3f73da;
+}
+
+#form-label {
+  margin: 20px 0 10px 0;
+  font-size: 14px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form div {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+form label {
+  font-size: 14px;
+  width: 150px;
+}
+
+form input {
+  height: 30px;
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  max-width: 600px;
+}
+
+.text-danger {
+  color: red;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 480px) {
+  form div {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,113 @@
+<div class="main-container">
+  <div class="container">
+    <div id="d-title">Confirm your appointment :</div>
+    <div id="d-name">{{ healthProfessional?.name}}</div>
+    <div id="d-profession">Profession: {{ healthProfessional?.profession }}</div>
+    <div id="d-speciality">Speciality: {{ healthProfessional?.speciality }}</div>
+    <div id="d-address">Address: {{ healthProfessional?.address }}</div>
+    <div id="d-time">Timing Selected: {{ time }}</div>
+    <div id="form-label">Fill the Form to confirm booking :</div>
+    <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="full-name">Full Name: </label>
+        <input
+          required
+          id="full-name"
+          type="text"
+          autocomplete="given-name"
+          class="form-control"
+          formControlName="fullName"
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          bookingForm.controls.fullName.invalid &&
+          bookingForm.controls.fullName.touched
+        "
+      >
+        Name is required
+      </span>
+      <div>
+        <label for="email">Email: </label>
+        <input
+          required
+          id="email"
+          type="email"
+          autocomplete="email"
+          class="form-control"
+          formControlName="email"
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          bookingForm.controls.email.invalid &&
+          bookingForm.controls.email.touched
+        "
+      >
+        Email is required
+      </span>
+      <div>
+        <label for="age">Age: </label>
+        <input
+          required
+          id="age"
+          type="number"
+          autocomplete="age"
+          formControlName="age"
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          bookingForm.controls.age.invalid && bookingForm.controls.age.touched
+        "
+      >
+        Age is required
+      </span>
+      <div>
+        <label for="address">Address: </label>
+        <input
+          required
+          id="address"
+          type="text"
+          autocomplete="address-line1"
+          formControlName="address"
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          bookingForm.controls.address.invalid &&
+          bookingForm.controls.address.touched
+        "
+      >
+        Address is required
+      </span>
+      <div>
+        <label for="remark">Remark: </label>
+        <input
+          required
+          id="remark"
+          type="text"
+          autocomplete="remark"
+          formControlName="remark"
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          bookingForm.controls.remark.invalid &&
+          bookingForm.controls.remark.touched
+        "
+      >
+        Remark is required
+      </span>
+      <div class="btn-box">
+        <button type="submit">Confirm Booking</button>
+        <button (click)="onCancel()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

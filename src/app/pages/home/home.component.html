@@ -1,0 +1,39 @@
+<div class="main-container">
+  <header>
+    <div class="logo">HealthCare Angular</div>
+    <div class="select-box">
+      <label for="type">Search by speciality</label>
+      <select name="type" id="type" (change)="filterBySpeciality($event)">
+        <ng-container *ngFor="let speciality of specialityList">
+          <option value="{{ speciality }}">{{ speciality }}</option>
+        </ng-container>
+      </select>
+    </div>
+  </header>
+
+  <div *ngIf="healthProfessional" class="container">
+    <ul class="card-box">
+      <li *ngFor="let professional of filterList" class="card">
+        <div>{{ professional.name }}</div>
+        <div>Profession: {{ professional.profession }}</div>
+        <div>Speciality: {{ professional.speciality }}</div>
+        <div>Book Slot:</div>
+        <ul class="card-slotbox">
+          <ng-container *ngFor="let timing of professional.availableTimings">
+            <li
+              class="card-timing"
+              [ngClass]="timing.booked ? 'disabled' : ''"
+              (click)="
+                !timing.booked && onbookTime(professional.workId, timing.time)
+              "
+            >
+              <div>{{ timing.date }}</div>
+              <!-- <hr /> -->
+              <div>{{ timing.time }}</div>
+            </li>
+          </ng-container>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
