@@ -1,18 +1,22 @@
 <div class="main-container">
   <div class="container">
     <div id="d-title">Confirm your appointment :</div>
-    <div id="d-name">{{ healthProfessional?.name}}</div>
-    <div id="d-profession">Profession: {{ healthProfessional?.profession }}</div>
-    <div id="d-speciality">Speciality: {{ healthProfessional?.speciality }}</div>
+    <div id="d-name">{{ healthProfessional?.name }}</div>
+    <div id="d-profession">
+      Profession: {{ healthProfessional?.profession }}
+    </div>
+    <div id="d-speciality">
+      Speciality: {{ healthProfessional?.speciality }}
+    </div>
     <div id="d-address">Address: {{ healthProfessional?.address }}</div>
     <div id="d-time">Timing Selected: {{ time }}</div>
     <div id="form-label">Fill the Form to confirm booking :</div>
     <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
       <div>
-        <label for="full-name">Full Name: </label>
+        <label for="name">Full Name: </label>
         <input
           required
-          id="full-name"
+          id="name"
           type="text"
           autocomplete="given-name"
           class="form-control"
@@ -108,6 +112,12 @@
         <button type="submit">Confirm Booking</button>
         <button (click)="onCancel()">Cancel</button>
       </div>
+      <span
+        class="text-danger form-alert"
+        *ngIf="bookingForm.invalid && bookingForm.touched"
+      >
+        Please fill all field correctly
+      </span>
     </form>
   </div>
 </div>
