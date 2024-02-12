@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  // Move to booking page 
+  // Move to booking page with specific params
   onbookTime(workId: string, time: string) {
     this.router.navigate(['/booking'], { queryParams: { workId, time } });
   }
