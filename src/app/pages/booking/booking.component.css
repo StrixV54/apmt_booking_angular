@@ -4,6 +4,7 @@
   justify-content: center;
   height: 100vh;
   background-color: #d7d7d7;
+  overflow: scroll;
 }
 
 .container {
