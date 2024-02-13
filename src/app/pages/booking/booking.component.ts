@@ -26,7 +26,7 @@ export class BookingComponent implements OnInit {
     email: new FormControl('', [Validators.required, Validators.email]),
     age: new FormControl('', Validators.required),
     address: new FormControl('', Validators.required),
-    remark: new FormControl('', Validators.required),
+    remark: new FormControl(''),
   });
 
   constructor(

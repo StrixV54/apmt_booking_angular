@@ -124,3 +124,8 @@ form input {
     flex-direction: column;
   }
 }
+
+label:has(+ input:required)::after {
+  content: " *";
+  color: red;
+}

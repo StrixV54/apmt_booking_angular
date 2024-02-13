@@ -13,7 +13,7 @@
     <div id="form-label">Fill the Form to confirm booking :</div>
     <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
       <div>
-        <label for="name">Full Name: </label>
+        <label for="name">Full Name</label>
         <input
           required
           id="name"
@@ -33,7 +33,7 @@
         Name is required
       </span>
       <div>
-        <label for="email">Email: </label>
+        <label for="email">Email </label>
         <input
           required
           id="email"
@@ -53,7 +53,7 @@
         Email is required
       </span>
       <div>
-        <label for="age">Age: </label>
+        <label for="age">Age </label>
         <input
           required
           id="age"
@@ -71,7 +71,7 @@
         Age is required
       </span>
       <div>
-        <label for="address">Address: </label>
+        <label for="address">Address </label>
         <input
           required
           id="address"
@@ -90,24 +90,14 @@
         Address is required
       </span>
       <div>
-        <label for="remark">Remark: </label>
+        <label for="remark">Remark </label>
         <input
-          required
           id="remark"
           type="text"
           autocomplete="remark"
           formControlName="remark"
         />
       </div>
-      <span
-        class="text-danger"
-        *ngIf="
-          bookingForm.controls.remark.invalid &&
-          bookingForm.controls.remark.touched
-        "
-      >
-        Remark is required
-      </span>
       <div class="btn-box">
         <button type="submit">Confirm Booking</button>
         <button (click)="onCancel()">Cancel</button>
@@ -115,9 +105,8 @@
       <span
         class="text-danger form-alert"
         *ngIf="bookingForm.invalid && bookingForm.touched"
+        >Please fill all the required fields correctly</span
       >
-        Please fill all the fields correctly
-      </span>
     </form>
   </div>
 </div>
